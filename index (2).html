@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bright Marketing — Ideas That Rise. Brands That Shine.</title>
+<meta name="description" content="Bright Marketing is a Cairo-based growth agency delivering branding, social media, content, and paid media strategy for ambitious brands like Cartown, Safarty Tours, and Loaviva.">
+<meta name="keywords" content="marketing agency Cairo, branding agency Egypt, social media management, digital marketing agency, Bright Marketing">
+<meta property="og:title" content="Bright Marketing — Ideas That Rise. Brands That Shine.">
+<meta property="og:description" content="A Cairo-based marketing agency turning ambitious brands into market leaders through strategy, content, and performance.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          serif: ['"Fraunces"', 'serif'],
+          sans: ['"Inter"', 'sans-serif'],
+          mono: ['"IBM Plex Mono"', 'monospace'],
+        },
+        colors: {
+          base: '#050507',
+          panel: '#0D0D12',
+          brand: '#F12E3E',
+          lime: '#D6FF3F',
+          violet: '#8B5CF6',
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #050507;
+  }
+  .font-display { font-family: 'Fraunces', serif; }
+  .text-balance { text-wrap: balance; }
+
+  /* ---------- Ambient mesh background ---------- */
+  .mesh-bg { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+  .blob { position: absolute; border-radius: 9999px; filter: blur(120px); }
+  .blob-1 { top: -10%; left: -5%; width: 42vw; height: 42vw; background: rgba(139,92,246,0.35); }
+  .blob-2 { top: 15%; right: -10%; width: 38vw; height: 38vw; background: rgba(241,46,62,0.28); }
+  .blob-3 { bottom: -15%; left: 20%; width: 46vw; height: 46vw; background: rgba(214,255,63,0.12); }
+  .blob-4 { bottom: 10%; right: 10%; width: 30vw; height: 30vw; background: rgba(139,92,246,0.20); }
+
+  .noise {
+    position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: 0.05; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  main, header, footer { position: relative; z-index: 10; }
+
+  /* ---------- Glass surfaces ---------- */
+  .glass {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .glass-strong {
+    background: rgba(13,13,18,0.55);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.06);
+  }
+
+  /* ---------- Nav ---------- */
+  .nav-link { position: relative; transition: color 0.3s ease, transform 0.3s ease; }
+  .nav-link:hover { transform: translateY(-2px); color: #D6FF3F; }
+
+  /* ---------- Bento glow ---------- */
+  .bento-card {
+    position: relative;
+    transition: transform 0.4s cubic-bezier(.2,.8,.2,1), border-color 0.4s ease, box-shadow 0.4s ease;
+  }
+  .bento-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(214,255,63,0.5);
+    box-shadow: 0 0 0 1px rgba(214,255,63,0.15), 0 20px 60px -20px rgba(214,255,63,0.25);
+  }
+  .bento-card.accent-violet:hover {
+    border-color: rgba(139,92,246,0.6);
+    box-shadow: 0 0 0 1px rgba(139,92,246,0.2), 0 20px 60px -20px rgba(139,92,246,0.35);
+  }
+  .bento-card.accent-brand:hover {
+    border-color: rgba(241,46,62,0.6);
+    box-shadow: 0 0 0 1px rgba(241,46,62,0.2), 0 20px 60px -20px rgba(241,46,62,0.35);
+  }
+
+  .case-card img { transition: transform 0.7s cubic-bezier(.2,.7,.2,1), filter 0.7s ease; }
+  .case-card:hover img { transform: scale(1.06); filter: saturate(1.2); }
+
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  .btn-lime {
+    background: #D6FF3F; color: #050507;
+    box-shadow: 0 0 24px rgba(214,255,63,0.35), 0 0 0 1px rgba(214,255,63,0.4);
+    transition: all 0.3s ease;
+  }
+  .btn-lime:hover { box-shadow: 0 0 36px rgba(214,255,63,0.55), 0 0 0 1px rgba(214,255,63,0.6); transform: translateY(-2px); }
+
+  input:focus, textarea:focus { outline: 2px solid #D6FF3F; outline-offset: 2px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid #D6FF3F; outline-offset: 3px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { transition: none; opacity: 1; transform: none; }
+    .case-card img, .bento-card, .nav-link { transition: none; }
+  }
+</style>
+</head>
+
+<body class="antialiased text-white/90">
+
+<div class="mesh-bg">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="blob blob-4"></div>
+</div>
+<div class="noise"></div>
+
+<!-- ========== FLOATING PILL NAV ========== -->
+<header class="fixed top-5 left-0 right-0 z-50 flex justify-center px-4">
+  <nav class="glass-strong rounded-full px-3 py-2.5 flex items-center gap-2 md:gap-6 max-w-3xl w-full md:w-auto">
+    <a href="#home" class="flex items-center pl-2 pr-1 shrink-0">
+      <img src="data:image/png;base64,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" alt="Bright Marketing" class="h-6 w-auto object-contain">
+    </a>
+
+    <ul class="hidden md:flex items-center gap-6 text-sm font-medium text-white/70 px-2">
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#services" class="nav-link">Services</a></li>
+      <li><a href="#work" class="nav-link">Work</a></li>
+      <li><a href="#testimonials" class="nav-link">Clients</a></li>
+    </ul>
+
+    <a href="#contact" class="btn-lime ml-auto md:ml-0 rounded-full text-sm font-bold px-5 py-2.5 whitespace-nowrap">
+      Start a Project
+    </a>
+  </nav>
+</header>
+
+<main>
+
+<!-- ========== HERO ========== -->
+<section id="home" class="relative min-h-screen flex items-center justify-center px-6 pt-32 pb-20">
+  <div class="max-w-5xl mx-auto text-center">
+    <p class="font-mono uppercase tracking-[0.3em] text-xs text-lime/80 mb-8">Bright Marketing — Cairo, Egypt</p>
+
+    <h1 class="font-display text-balance text-7xl md:text-8xl lg:text-9xl leading-[0.95] font-medium mb-8">
+      Ideas that <em class="italic text-violet">rise.</em><br>
+      Brands that <em class="italic text-brand">shine.</em>
+    </h1>
+
+    <p class="text-lg md:text-xl text-white/60 max-w-xl mx-auto mb-12 font-light">
+      A full-service growth studio turning ambitious businesses into market leaders — through strategy, story, and performance that compounds.
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="#contact" class="btn-lime rounded-full font-bold px-8 py-4">Get a Free Consultation</a>
+      <a href="#work" class="glass rounded-full font-semibold px-8 py-4 hover:bg-white/10 transition-colors duration-300">See Our Work</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== STATS BENTO ========== -->
+<section class="px-6 pb-24">
+  <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 reveal">
+    <div class="bento-card glass rounded-3xl p-8 col-span-2 md:col-span-2 flex flex-col justify-between">
+      <p class="font-mono text-xs uppercase tracking-widest text-white/50 mb-6">Our footprint</p>
+      <p class="font-display text-5xl md:text-6xl font-medium mb-2">15+</p>
+      <p class="text-white/60">Brands actively partnered with across Egypt</p>
+    </div>
+    <div class="bento-card accent-violet glass rounded-3xl p-8 flex flex-col justify-between">
+      <p class="font-mono text-xs uppercase tracking-widest text-white/50 mb-6">Coverage</p>
+      <p class="font-display text-5xl font-medium text-violet mb-2">360°</p>
+      <p class="text-white/60 text-sm">Brand to performance</p>
+    </div>
+    <div class="bento-card accent-brand glass rounded-3xl p-8 flex flex-col justify-between">
+      <p class="font-mono text-xs uppercase tracking-widest text-white/50 mb-6">Industries</p>
+      <p class="font-display text-5xl font-medium text-brand mb-2">3</p>
+      <p class="text-white/60 text-sm">Auto · Travel · Retail</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section id="about" class="px-6 py-24 md:py-32">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-12 gap-12">
+    <div class="md:col-span-4 reveal">
+      <p class="font-mono uppercase tracking-widest text-xs text-lime mb-4">Who We Are</p>
+      <h2 class="font-display text-balance text-4xl md:text-5xl font-medium leading-tight">A studio built on strategy, not guesswork.</h2>
+    </div>
+    <div class="md:col-span-7 md:col-start-6 reveal">
+      <p class="text-lg text-white/60 mb-6 leading-relaxed font-light">
+        Bright Marketing partners with growing brands across Egypt's automotive, travel, and lifestyle sectors to build marketing systems that actually move the needle — from brand identity to the campaigns that put it in front of the right people.
+      </p>
+      <p class="text-lg text-white/60 leading-relaxed font-light">
+        We work as an extension of your team: close, fast, and accountable to real numbers — not vanity metrics.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SERVICES — BENTO GRID ========== -->
+<section id="services" class="px-6 py-24 md:py-32">
+  <div class="max-w-6xl mx-auto">
+    <div class="mb-14 max-w-2xl reveal">
+      <p class="font-mono uppercase tracking-widest text-xs text-lime mb-4">What We Do</p>
+      <h2 class="font-display text-balance text-4xl md:text-5xl font-medium">Everything a growing brand needs.</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-6 gap-5 reveal">
+      <div class="bento-card glass rounded-3xl p-8 md:col-span-4 min-h-[220px] flex flex-col justify-end">
+        <p class="font-mono text-lime text-xs uppercase tracking-widest mb-4">Brand</p>
+        <h3 class="font-display text-3xl font-medium mb-3">Branding & Identity</h3>
+        <p class="text-white/55 max-w-md">Naming, visual identity, and positioning that gives your business a voice worth remembering.</p>
+      </div>
+      <div class="bento-card accent-violet glass rounded-3xl p-8 md:col-span-2 min-h-[220px] flex flex-col justify-end">
+        <p class="font-mono text-violet text-xs uppercase tracking-widest mb-4">Social</p>
+        <h3 class="font-display text-2xl font-medium mb-3">Social Media</h3>
+        <p class="text-white/55 text-sm">Content and community that keeps audiences engaged daily.</p>
+      </div>
+
+      <div class="bento-card accent-brand glass rounded-3xl p-8 md:col-span-2 min-h-[220px] flex flex-col justify-end">
+        <p class="font-mono text-brand text-xs uppercase tracking-widest mb-4">Content</p>
+        <h3 class="font-display text-2xl font-medium mb-3">Creative Production</h3>
+        <p class="text-white/55 text-sm">Photography, video, and copy produced in-house.</p>
+      </div>
+      <div class="bento-card glass rounded-3xl p-8 md:col-span-4 min-h-[220px] flex flex-col justify-end">
+        <p class="font-mono text-lime text-xs uppercase tracking-widest mb-4">Performance</p>
+        <h3 class="font-display text-3xl font-medium mb-3">Paid Media & Ads</h3>
+        <p class="text-white/55 max-w-md">Meta, Google, and TikTok campaigns built around measurable return, not just reach.</p>
+      </div>
+
+      <div class="bento-card glass rounded-3xl p-8 md:col-span-3 min-h-[220px] flex flex-col justify-end">
+        <p class="font-mono text-lime text-xs uppercase tracking-widest mb-4">Strategy</p>
+        <h3 class="font-display text-2xl font-medium mb-3">Marketing Strategy & Planning</h3>
+        <p class="text-white/55 text-sm">Quarterly roadmaps that align every channel to one clear growth goal.</p>
+      </div>
+      <div class="bento-card accent-violet glass rounded-3xl p-8 md:col-span-3 min-h-[220px] flex flex-col justify-end">
+        <p class="font-mono text-violet text-xs uppercase tracking-widest mb-4">Digital</p>
+        <h3 class="font-display text-2xl font-medium mb-3">Web & Digital Experience</h3>
+        <p class="text-white/55 text-sm">Websites and landing pages designed to convert visitors into customers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CASE STUDIES ========== -->
+<section id="work" class="px-6 py-24 md:py-32">
+  <div class="max-w-6xl mx-auto">
+    <div class="mb-14 max-w-2xl reveal">
+      <p class="font-mono uppercase tracking-widest text-xs text-brand mb-4">Selected Work</p>
+      <h2 class="font-display text-balance text-4xl md:text-5xl font-medium">Brands we've helped shine.</h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5">
+      <a href="#" class="case-card reveal glass rounded-3xl overflow-hidden h-[420px] block relative group">
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" alt="Cartown Auto Protection campaign" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+        <div class="absolute bottom-0 p-7">
+          <p class="font-mono uppercase tracking-widest text-xs text-lime mb-2">Automotive · Branding</p>
+          <h3 class="font-display text-2xl font-medium mb-2">Cartown Auto Protection</h3>
+          <p class="text-sm text-white/70">A modern identity and content system for Egypt's growing auto-care category.</p>
+        </div>
+      </a>
+      <a href="#" class="case-card reveal glass rounded-3xl overflow-hidden h-[420px] block relative group">
+        <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=80" alt="Safarty Tours campaign" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+        <div class="absolute bottom-0 p-7">
+          <p class="font-mono uppercase tracking-widest text-xs text-violet mb-2">Travel · Social & Ads</p>
+          <h3 class="font-display text-2xl font-medium mb-2">Safarty Tours</h3>
+          <p class="text-sm text-white/70">Always-on social content and performance campaigns driving tour bookings.</p>
+        </div>
+      </a>
+      <a href="#" class="case-card reveal glass rounded-3xl overflow-hidden h-[420px] block relative group">
+        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80" alt="Loaviva campaign" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+        <div class="absolute bottom-0 p-7">
+          <p class="font-mono uppercase tracking-widest text-xs text-brand mb-2">Retail · Brand & Content</p>
+          <h3 class="font-display text-2xl font-medium mb-2">Loaviva</h3>
+          <p class="text-sm text-white/70">A refreshed brand voice and creative direction across every touchpoint.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TESTIMONIALS ========== -->
+<section id="testimonials" class="px-6 py-24 md:py-32">
+  <div class="max-w-6xl mx-auto">
+    <div class="mb-14 max-w-2xl reveal">
+      <p class="font-mono uppercase tracking-widest text-xs text-lime mb-4">Client Words</p>
+      <h2 class="font-display text-balance text-4xl md:text-5xl font-medium">Trusted by the brands we grow.</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-5">
+      <blockquote class="bento-card glass reveal rounded-3xl p-8">
+        <p class="text-lg leading-relaxed mb-6 font-light">"Bright brought structure to our marketing for the first time — every campaign now ties back to a real goal."</p>
+        <footer class="text-sm text-white/50">— Marketing Lead, Cartown Auto Protection</footer>
+      </blockquote>
+      <blockquote class="bento-card accent-violet glass reveal rounded-3xl p-8">
+        <p class="text-lg leading-relaxed mb-6 font-light">"Our booking inquiries grew consistently once Bright took over our social channels. Fast, reliable, creative."</p>
+        <footer class="text-sm text-white/50">— Founder, Safarty Tours</footer>
+      </blockquote>
+      <blockquote class="bento-card accent-brand glass reveal rounded-3xl p-8">
+        <p class="text-lg leading-relaxed mb-6 font-light">"They understood our brand better than we did. The new identity finally feels like us."</p>
+        <footer class="text-sm text-white/50">— Owner, Loaviva</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section id="contact" class="px-6 py-24 md:py-32">
+  <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-stretch">
+    <div class="reveal flex flex-col justify-center">
+      <p class="font-mono uppercase tracking-widest text-xs text-lime mb-4">Let's Talk</p>
+      <h2 class="font-display text-balance text-4xl md:text-5xl font-medium mb-6 leading-tight">Ready to make your brand impossible to ignore?</h2>
+      <p class="text-white/60 text-lg leading-relaxed mb-8 font-light">Tell us about your goals and we'll come back with a plan — no obligation, just a clear next step.</p>
+      <div class="space-y-3 font-mono text-sm text-white/50">
+        <p>info@brightmarkting.com</p>
+        <p>+20 150 010 6616</p>
+        <p>Cairo, Egypt</p>
+      </div>
+    </div>
+
+    <form class="reveal glass-strong rounded-3xl p-8 space-y-5" onsubmit="event.preventDefault(); this.querySelector('.form-success').classList.remove('hidden'); this.querySelector('.form-fields').classList.add('hidden');">
+      <div class="form-fields space-y-5">
+        <div>
+          <label for="name" class="block text-sm mb-2 text-white/60">Full name</label>
+          <input id="name" required type="text" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/30" placeholder="Your name">
+        </div>
+        <div>
+          <label for="email" class="block text-sm mb-2 text-white/60">Email</label>
+          <input id="email" required type="email" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/30" placeholder="you@company.com">
+        </div>
+        <div>
+          <label for="msg" class="block text-sm mb-2 text-white/60">What are you looking to achieve?</label>
+          <textarea id="msg" rows="4" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/30" placeholder="Tell us a bit about your project"></textarea>
+        </div>
+        <button type="submit" class="btn-lime w-full py-3.5 rounded-full font-bold">Send Message</button>
+      </div>
+      <p class="form-success hidden text-lime font-medium">Thanks — we'll be in touch within one business day.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="px-6 py-10 text-white/40 text-sm">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-4">
+    <p>© <span id="year"></span> Bright Marketing. All rights reserved.</p>
+    <p class="font-mono">Cairo, Egypt</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+</script>
+</body>
+</html>
